@@ -19,6 +19,7 @@ public class AuthController {
         this.authClient = authClient;
     }
 
+    @CrossOrigin
     @PostMapping(path = "/", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     public ResponseEntity<Object> auth(
             AuthDtoRequest dtoRequest) {
