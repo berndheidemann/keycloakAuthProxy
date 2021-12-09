@@ -2,7 +2,6 @@ package com.example.keycloak_auth_service;
 
 import com.example.keycloak_auth_service.dto.AuthDtoRequest;
 import com.example.keycloak_auth_service.dto.AuthDtoResponse;
-import com.example.keycloak_auth_service.dto.AuthDtoClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = "/")
 public class AuthController {
 
@@ -19,7 +19,6 @@ public class AuthController {
         this.authClient = authClient;
     }
 
-    @CrossOrigin
     @PostMapping(path = "/", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     public ResponseEntity<Object> auth(
             AuthDtoRequest dtoRequest) {
@@ -39,7 +38,7 @@ public class AuthController {
 
     @GetMapping
     public String hello() {
-        return "hello";
+        return "hello3";
     }
 
 }
